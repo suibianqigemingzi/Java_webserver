@@ -7,88 +7,214 @@
   <version>1.0-SNAPSHOT</version>
   <name>webserver Maven Webapp</name>
   <url>http://maven.apache.org</url>
+    <!-- 版本号声明 -->
+    <properties>
+        <spring.version>4.2.5.RELEASE</spring.version>
+        <mybatis.version>3.3.0</mybatis.version>
+        <mybatis.pagePlugin.version>3.7.4</mybatis.pagePlugin.version>
+        <mybatis-spring.version>1.2.2</mybatis-spring.version>
+        <junit.version>4.8</junit.version>
+        <log4j.version>1.2.17</log4j.version>
+        <data-pool.version>1.0.13</data-pool.version>
+        <aspectj.version>1.7.2</aspectj.version>
+        <json.version>20140107</json.version>
+        <sf.json.version>2.4</sf.json.version>
+        <fastjson.version>1.2.5</fastjson.version>
+        <jackson.version>1.9.11</jackson.version>
+        <shiro.version>1.2.3</shiro.version>
+        <jsr330.version>1.1.0.Final</jsr330.version>
+        <fileupload.version>1.3.1</fileupload.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-      <!--日志-->
       <dependency>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-log4j12</artifactId>
-          <version>1.7.16</version>
+          <groupId>com.alibaba</groupId>
+          <artifactId>fastjson</artifactId>
+          <version>1.2.5</version>
       </dependency>
-      <!--J2EE-->
+      <!-- 基础包 -->
       <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>javax.servlet-api</artifactId>
-          <version>3.1.0</version>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+          <version>2.4</version>
       </dependency>
       <dependency>
-          <groupId>javax.servlet.jsp</groupId>
-          <artifactId>jsp-api</artifactId>
-          <version>2.2</version>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+          <version>3.1</version>
       </dependency>
       <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>jstl</artifactId>
-          <version>1.2</version>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+          <version>2.6</version>
       </dependency>
-      <!--mysql驱动包-->
+      <dependency>
+          <groupId>commons-codec</groupId>
+          <artifactId>commons-codec</artifactId>
+          <version>1.6</version>
+      </dependency>
+
+      <!-- spring包 -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-core</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-beans</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-jdbc</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+
+      <!-- mysql包 -->
       <dependency>
           <groupId>mysql</groupId>
           <artifactId>mysql-connector-java</artifactId>
           <version>5.1.35</version>
       </dependency>
-      <!--springframework-->
+
+      <!-- 加载spring mvc -->
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-web</artifactId>
-          <version>4.2.5.RELEASE</version>
+          <version>${spring.version}</version>
       </dependency>
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-webmvc</artifactId>
-          <version>4.2.5.RELEASE</version>
+          <version>${spring.version}</version>
       </dependency>
+
+      <!-- 加载aop和事务处理机制 -->
       <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-context</artifactId>
-          <version>4.2.5.RELEASE</version>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjrt</artifactId>
+          <version>${aspectj.version}</version>
       </dependency>
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-test</artifactId>
-          <version>4.2.5.RELEASE</version>
-      </dependency>
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-jdbc</artifactId>
-          <version>4.2.5.RELEASE</version>
-      </dependency>
-      <!--<dependency>-->
-          <!--<groupId>com.github.stefanbirkner</groupId>-->
-          <!--<artifactId>system-rules</artifactId>-->
-          <!--<version>1.16.1</version>-->
-          <!--<scope>test</scope>-->
-      <!--</dependency>-->
       <dependency>
           <groupId>org.aspectj</groupId>
           <artifactId>aspectjweaver</artifactId>
-          <version>1.8.9</version>
+          <version>${aspectj.version}</version>
       </dependency>
-      <!--其他需要的包-->
       <dependency>
-          <groupId>org.apache.commons</groupId>
-          <artifactId>commons-lang3</artifactId>
-          <version>3.4</version>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aop</artifactId>
+          <version>${spring.version}</version>
       </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-tx</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+
+      <!-- shiro支持 -->
+      <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-core</artifactId>
+          <version>${shiro.version}</version>
+          <exclusions>
+              <exclusion>
+                  <artifactId>slf4j-api</artifactId>
+                  <groupId>org.slf4j</groupId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-web</artifactId>
+          <version>${shiro.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
+          <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>javax.jms</groupId>
+          <artifactId>jms</artifactId>
+          <version>1.1</version>
+          <type>pom</type>
+      </dependency>
+
+      <!--mybatis -->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis</artifactId>
+          <version>3.2.8</version>
+      </dependency>
+      <!-- 添加mybatis与Spring整合的核心包 -->
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis-spring</artifactId>
+          <version>1.2.2</version>
+      </dependency>
+      <!-- kaptcha -->
+      <dependency>
+          <groupId>com.google.code.kaptcha</groupId>
+          <artifactId>kaptcha</artifactId>
+          <version>2.3.2</version>
+      </dependency>
+
+      <!-- 数据库连接池 -->
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>druid</artifactId>
+          <version>${data-pool.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>commons-dbcp</groupId>
+          <artifactId>commons-dbcp</artifactId>
+          <version>1.4</version>
+      </dependency>
+      <!-- 日志 -->
+      <dependency>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+          <version>1.1.1</version>
+      </dependency>
+      <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>${log4j.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+          <version>1.7.12</version>
+      </dependency>
+      <!-- 文件上传 -->
       <dependency>
           <groupId>commons-fileupload</groupId>
           <artifactId>commons-fileupload</artifactId>
-          <version>1.3.1</version>
+          <version>${fileupload.version}</version>
+      </dependency>
+
+      <!-- 测试类 -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-test</artifactId>
+          <version>${spring.version}</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>${junit.version}</version>
+          <scope>test</scope>
       </dependency>
   </dependencies>
   <build>
