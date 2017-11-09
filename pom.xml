@@ -21,6 +21,7 @@
         <sf.json.version>2.4</sf.json.version>
         <fastjson.version>1.2.5</fastjson.version>
         <jackson.version>1.9.11</jackson.version>
+        <oscache.version>2.4.1</oscache.version>
         <shiro.version>1.2.3</shiro.version>
         <jsr330.version>1.1.0.Final</jsr330.version>
         <fileupload.version>1.3.1</fileupload.version>
@@ -64,6 +65,11 @@
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-context</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context-support</artifactId>
           <version>${spring.version}</version>
       </dependency>
       <dependency>
@@ -135,12 +141,44 @@
           <artifactId>shiro-web</artifactId>
           <version>${shiro.version}</version>
       </dependency>
-
+      <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-spring</artifactId>
+          <version>${shiro.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.shiro</groupId>
+          <artifactId>shiro-ehcache</artifactId>
+          <version>${shiro.version}</version>
+          <exclusions>
+              <exclusion>
+                  <artifactId>slf4j-api</artifactId>
+                  <groupId>org.slf4j</groupId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      <dependency>
+          <groupId>opensymphony</groupId>
+          <artifactId>oscache</artifactId>
+          <version>${oscache.version}</version>
+          <exclusions>
+              <exclusion>
+                  <artifactId>servlet-api</artifactId>
+                  <groupId>javax.servlet</groupId>
+              </exclusion>
+          </exclusions>
+      </dependency>
       <dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>jstl</artifactId>
           <version>1.2</version>
           <scope>compile</scope>
+      </dependency>
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jsp-api</artifactId>
+          <version>2.0</version>
+          <scope>provided</scope>
       </dependency>
       <dependency>
           <groupId>javax.jms</groupId>

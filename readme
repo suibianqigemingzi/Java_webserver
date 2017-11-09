@@ -21,3 +21,12 @@ Elasticsearch
 第一步 生成一个新工程：
 1 项目创建参考：http://www.aspku.com/kaifa/java/285100.html
 2 添加数据库等功能参考:http://www.sojson.com/shiro
+
+3 ehcache: http://www.cnblogs.com/jingmoxukong/p/5975994.html
+
+4
+shiro:http://blog.csdn.net/lyh_974056553/article/details/17229667
+http://blog.csdn.net/swingpyzf/article/details/46342023
+http://blog.csdn.net/jadyer/article/details/12208847
+http://blog.csdn.net/lyh_974056553/article/details/17229667
+
