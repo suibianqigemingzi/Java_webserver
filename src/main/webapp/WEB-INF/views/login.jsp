@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<p>Main Page!</p>
+<p>Login Page!</p>
 </body>
 </html>

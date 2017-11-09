@@ -22,12 +22,18 @@ import java.util.*;
 public class IndexController {
     @Autowired
     IIndexService indexService;
-    @RequestMapping("/loginForm")
+    @RequestMapping("/index")
     public String index(HttpServletRequest request) {
+        Subject sub = SecurityUtils.getSubject();
+        if(!sub.isAuthenticated())
+        {
+            return "login";
+        }
+        return "index";
+    }
+    @RequestMapping("/login")
+    public String login(HttpServletRequest request) {
 
-        System.out.println("index");
-       // int count = indexService.testDB();
-       // System.out.println(count);
         String resultPageURL = "";
         String username = "test";
         String password = "pw";
@@ -65,6 +71,7 @@ public class IndexController {
             System.out.println("用户[" + username + "]登录认证通过(这里可以进行一些认证通过后的一些系统参数初始化操作)");
         }else{
             token.clear();
+            return "login";
         }
         return "index";
     }
