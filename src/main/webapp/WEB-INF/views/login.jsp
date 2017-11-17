@@ -1,16 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: win7
-  Date: 2017/11/8
-  Time: 11:02
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
 <body>
-<p>Login Page!</p>
+<h2>Login!</h2>
 </body>
 </html>

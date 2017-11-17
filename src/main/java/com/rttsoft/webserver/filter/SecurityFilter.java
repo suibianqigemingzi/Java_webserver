@@ -15,10 +15,11 @@ public class SecurityFilter extends AuthorizationFilter{
     protected boolean isAccessAllowed(ServletRequest req,
                                       ServletResponse res, Object mapValue) throws Exception {
         Subject sub = SecurityUtils.getSubject();
+
         if(!sub.isAuthenticated())
         {
            // log.warn("用户没有登陆！");
-            return false;
+            return true;
         }
 		/*
 		 * 获取到uri 如果是结尾是/uuid格式，

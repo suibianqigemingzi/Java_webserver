@@ -4,10 +4,11 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations">
             <list>
-                   <value>classpath:profile/application.properties</value>
+                <value>classpath:profile/application.properties</value>
             </list>
         </property>
     </bean>
@@ -52,7 +53,7 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="mapperLocations" value="classpath:mapping/IndexMapper.xml" />
+        <property name="mapperLocations" value="classpath:mapping/*.xml" />
         <property name="configLocation" value="classpath:/mybatis-Configuration.xml" />
     </bean>
 
@@ -61,7 +62,7 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
-    <context:component-scan base-package="com.rttsoft.webserver">
+    <context:component-scan base-package="com.rttsoft.webserver.web">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -93,7 +94,9 @@
                         <!-- 干扰线颜色
 
                      <prop key="kaptcha.noise.color">blue</prop>   -->
-                       <!-- 验证码文本字符间距 -->
+
+
+                        <!-- 验证码文本字符间距 -->
 
                         <prop key="kaptcha.textproducer.char.space">3</prop>
 
@@ -106,8 +109,5 @@
             </bean>
         </property>
     </bean>
-
     <import resource="classpath:shiro.xml"/>
-    <!--<import resource="spring-cache.xml"/>-->
-    <!--<import resource="spring-shiro.xml"/>-->
 </beans>

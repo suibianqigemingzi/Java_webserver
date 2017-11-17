@@ -5,7 +5,6 @@ import com.rttsoft.webserver.model.Permission;
 import com.rttsoft.webserver.model.Role;
 import com.rttsoft.webserver.model.User;
 import com.rttsoft.webserver.service.IUserService;
-import com.rttsoft.webserver.service.impl.UserServiceImpl;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -17,14 +16,14 @@ import java.util.*;
 
 public class MyShiroRealm extends AuthorizingRealm {
 // 用于获取用户信息及用户权限信息的业务接口
-@Autowired
-private IUserService userService;
+//@Autowired
+//private IUserService userService;
     // 获取授权信息
 protected AuthorizationInfo doGetAuthorizationInfo(
     PrincipalCollection principals) {
     String username = (String) principals.getPrimaryPrincipal();
 
-    Set<Role> roleSet =  userService.findUserByUsername(username).getRoleSet();
+   /* Set<Role> roleSet =  userService.findUserByUsername(username).getRoleSet();
     //角色名的集合
     Set<String> roles = new HashSet<String>();
     //权限名的集合
@@ -37,10 +36,11 @@ protected AuthorizationInfo doGetAuthorizationInfo(
             permissions.add(per.getName());
         }
     }
+    */
     SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
 
-    authorizationInfo.addRoles(roles);
-    authorizationInfo.addStringPermissions(permissions);
+   // authorizationInfo.addRoles(roles);
+   // authorizationInfo.addStringPermissions(permissions);
 
 
     return authorizationInfo;

@@ -30,9 +30,9 @@
 		<property name="filterChainDefinitions">
 			<value>
 				<!-- 自定义过滤器 -->
-				/admin/** = securityFilter
-				/dict/** = authc
-				/login = anon
+				<!--/admin/** = securityFilter-->
+				<!--/dict/** = authc-->
+				<!--/login = anon-->
 			</value>
 		</property>
 	</bean>
