@@ -1,4 +1,4 @@
-本项目是指导初学者一步一步完成一个基于SpringMVC的Java web工程。最后可能会形成一个包含各种知识点的一个大杂烩，应该比较接近CMS。
+一步一步完成一个基于SpringMVC的Java web工程。最后可能会形成一个包含各种知识点的一个大杂烩，应该比较接近CMS。
 
 用到的工具：
 IntelliJ IDEA 2017.2.5 x64
@@ -32,4 +32,4 @@ http://blog.csdn.net/lyh_974056553/article/details/17229667
 
 5 前端模板：https://wrapbootstrap.com/theme/wintertide-admin-theme-WB0551736
 
-6 2017-11-16 集成Bootstrap
+6 2017-11-20 集成Bootstrap

@@ -12,12 +12,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="stylesheet" type="text/css" href="<%=ctx%>static/ui/lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<%=ctx%>static/ui/lib/bootstrap/css/bootstrap-responsive.css">
-    <link rel="stylesheet" type="text/css" href="<%=ctx%>static/ui/stylesheets/theme.css">
-    <link rel="stylesheet" href="static/ui/lib/font-awesome/css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="<%=ctx%>static/ui/lib/bootstrap/css/bootstrap.css">
+      <%--<link rel="stylesheet" type="text/css" href="<%=ctx%>static/ui/lib/bootstrap/css/bootstrap-responsive.css">--%>
+      <link rel="stylesheet" type="text/css" href="<%=ctx%>static/ui/stylesheets/theme.css">
+      <%--<link rel="stylesheet" href="<%=ctx%>static/ui/static/ui/lib/font-awesome/css/font-awesome.css">--%>
 
-    <script src="<%=ctx%>static/vendor/jquery-1.8.1.min.js" type="text/javascript"></script>
+      <script src="<%=ctx%>static/vendor/jquery-1.8.1.min.js" type="text/javascript"></script>
 
       <script type="text/javascript">
       function changeCode() {

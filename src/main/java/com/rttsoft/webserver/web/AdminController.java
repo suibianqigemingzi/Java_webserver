@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping(value = "/admin")
 public class AdminController {
-    @RequestMapping(value = "")
+    @RequestMapping(value = "login")
     public String init(HttpServletRequest request, HttpServletResponse response, ModelMap map){
 
         return "admin/sign-in";
@@ -28,10 +28,10 @@ public class AdminController {
         return "admin/sign-up";
     }
 
-    @RequestMapping("/login")
+    @RequestMapping("index")
     public String login(HttpServletRequest request) {
 
-        String resultPageURL = "";
+       /* String resultPageURL = "";
         String username = "test";
         String password = "pw";
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
@@ -70,6 +70,8 @@ public class AdminController {
             token.clear();
             return "login";
         }
-        return "index";
+
+        */
+        return "admin/index";
     }
 }
