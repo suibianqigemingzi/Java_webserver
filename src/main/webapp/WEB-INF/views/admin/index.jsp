@@ -132,14 +132,16 @@
                 </ul>
             </div>
         </div>
+
         <%--<div class="span9">--%>
             <%--<script type="text/javascript" src="lib/jqplot/jquery.jqplot.min.js"></script>--%>
             <%--<script type="text/javascript" charset="utf-8" src="javascripts/graphDemo.js"></script>--%>
         <%--</div>--%>
         <div class="content">
             <div class="Conframe">
-                <iframe name="Conframe" id="Conframe" ></iframe>
+                <iframe name="Conframe" id="Conframe" frameborder="no" frameborder="no" border="0" ></iframe>
             </div>
+        </div>
         </div>
     <footer>
         <hr>
