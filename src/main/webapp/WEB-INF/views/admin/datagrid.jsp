@@ -8,8 +8,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         
         <title>DataTables Bootstrap 3 example</title>
-
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
+       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
         <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
         <script type="text/javascript" charset="utf-8">
             $(document).ready(function() {
@@ -33,9 +32,14 @@
                 {"data": "salary"},
                 {"data": "start_date"},
                 {"data": "office"},
-                {"data": "extn"}
+                {"data": "extn"},
+                       {"data": ""}
             ],
-
+                    "columnDefs": [ {
+                        "targets": -1,
+                        "data": null,
+                        "defaultContent": "<button>Click!</button>"
+                    } ],
                  "language": {
                 "lengthMenu": "每页_MENU_ 条记录",
                 "zeroRecords": "没有找到记录",
@@ -53,9 +57,22 @@
         </script>
     </head>
     <body>
-        <div class="container">
+<%--<div class="container">--%>
+    <h1 class="page-title">Users</h1>
+<div class="btn-toolbar">
+    <button class="btn btn-primary"><i class="icon-plus"></i> New User</button>
+    <button class="btn">Import</button>
+    <button class="btn">Export</button>
+    <div class="btn-group">
+    </div>
+</div>
+</div>
 
-       <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+<div>
+    <br/>
+</div>
+
+       <table id="example" class="table" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>姓名</th>
@@ -64,6 +81,7 @@
                 <th>开始日期</th>
                 <th>办公室</th>
                 <th>编号</th>
+                <th>操作</th>
             </tr>
         </thead>
     </table>
