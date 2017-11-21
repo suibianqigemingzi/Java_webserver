@@ -60,7 +60,7 @@
             position: relative;
             min-height: 800px;
             background: #fff;
-            margin-left: 240px;
+            margin-left: 280px;
             border-left: 1px solid #cccccc;
             padding: 15px 15px 0px 15px;
         }
