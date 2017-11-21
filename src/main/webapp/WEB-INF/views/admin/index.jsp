@@ -108,7 +108,7 @@
                         <li ><a target="Conframe" href="<%=ctx%>admin/calendar"><span class="fa fa-caret-right"></span>Calendar</a></li>
                         <li ><a target="Conframe" href="<%=ctx%>admin/faq"><span class="fa fa-caret-right"></span>Faq</a></li>
                         <li ><a target="Conframe" href="<%=ctx%>admin/help"><span class="fa fa-caret-right"></span>Help</a></li>
-
+                        <li ><a target="Conframe" href="<%=ctx%>admin/datagrid"><span class="fa fa-caret-right"></span>Datagrid测试</a></li>
                     </ul>
                 <div class="nav-header" data-toggle="collapse" data-target="#accounts-menu"><i class="icon-briefcase"></i>Account<span class="label label-info">+10</span></div>
                 <ul id="accounts-menu" class="nav nav-list collapse in">
