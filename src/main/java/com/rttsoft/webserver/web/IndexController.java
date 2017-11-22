@@ -6,10 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import org.apache.log4j.Logger;
 @Controller
 @RequestMapping(value = "")
 public class IndexController {
+    public static final Logger logger = Logger.getLogger(IndexController.class);
+    public static final Logger loggerRecord = Logger.getLogger("RECORD");
     @RequestMapping(value = "")
     public String init(HttpServletRequest request, HttpServletResponse response, ModelMap map){
         return "index";
