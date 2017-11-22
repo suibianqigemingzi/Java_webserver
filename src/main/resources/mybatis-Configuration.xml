@@ -10,7 +10,7 @@
     </settings>
 
     <typeAliases>
-        <package name="com.rttsoft.webserver.dto"/>
+        <package name="com.rttsoft.webserver.entity"/>
         <package name="com.rttsoft.webserver.vo"/>
         <package name="com.rttsoft.webserver.qo"/>
     </typeAliases>
