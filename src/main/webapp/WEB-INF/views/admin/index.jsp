@@ -102,6 +102,7 @@
                   <div class="nav-header" data-toggle="collapse" data-target="#dashboard-menu"><i class="icon-dashboard"></i>Dashboard</div>
                     <ul id="dashboard-menu" class="nav nav-list collapse in">
                         <li ><a target="Conframe" href="<%=ctx%>admin/home"><span class="fa fa-caret-right"></span>Home</a></li>
+                        <li ><a target="Conframe" href="<%=ctx%>admin/systeminfo"><span class="fa fa-caret-right"></span>System Info</a></li>
                         <li ><a target="Conframe" href="<%=ctx%>admin/userlist"><span class="fa fa-caret-right"></span>User List</a></li>
                         <li ><a target="Conframe" href="<%=ctx%>admin/user"><span class="fa fa-caret-right"></span>User Item</a></li>
                         <li ><a target="Conframe" href="<%=ctx%>admin/gallery"><span class="fa fa-caret-right"></span>Gallery</a></li>
